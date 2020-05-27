@@ -19,7 +19,18 @@ public class AnswerActivity1 extends AppCompatActivity {
 
 
         Intent intentReceived = getIntent();
-        String questionSelected = intentReceived.getStringExtra("Question");
-        tvAnswer.setText(questionSelected + "answer is: Queue");
+        int questionSelected = intentReceived.getIntExtra("Question", 0);
+
+        if(questionSelected == 1) {
+            tvAnswer.setText("Question " +questionSelected + " answer is: Queue");
+
+        }
+        else if(questionSelected == 2) {
+            tvAnswer.setText("Question " +questionSelected + " answer is: Gone");
+
+        }
+
+
+
     }
 }
